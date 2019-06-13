@@ -4,7 +4,7 @@
   <title>Electronix Store</title>
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
   <link rel="stylesheet" href="../CSS/main.css">
-  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/produk.css">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
@@ -50,10 +50,10 @@
     </a>
 
     <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="cart.html">Cart</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.php">Home</a>
+      <a href="shop.php">Shop</a>
+      <a href="cart.php">Cart</a>
+      <a href="contact.php">Contact</a>
     </div>
   </div>
   <br><br>
@@ -61,42 +61,42 @@
     <h2>ALL PRODUCT</h2>
     <section>
       <article class="tes">
-        <img src="images/jagung.jpg" alt="alpha"><br>
+        <img src="../IMAGE/jagung.jpg" alt="alpha"><br>
         <span class="name">Jagung Muda</span><br>
         <button class="button"><span>Detail</span></button>
       </article>
       <article class="tes">
-        <img src="images/bawangm.jpg" alt="alpha">
+        <img src="../IMAGE/bawangm.jpg" alt="alpha">
         <p>Bawang Merah</p>
         <button class="button"><span>Detail</span></button>
       </article>
       <article class="tes">
-        <img src="images/bawangp.jpg" alt="alpha">
+        <img src="../IMAGE/bawangp.jpg" alt="alpha">
         <p>Bawang Putih</p>
         <button class="button"><span>Detail</span></button>
       </article>
       <article class="tes">
-        <img src="images/bayam.jpg" alt="alpha">
+        <img src="../IMAGE/bayam.jpg" alt="alpha">
         <p>Bayam</p>
         <button class="button"><span>Detail</span></button>
       </article>
       <article class="tes">
-        <img src="images/apel.jpg" alt="alpha">
+        <img src="../IMAGE/apel.jpg" alt="alpha">
         <p>apel</p>
         <button class="button"><span>Detail</span></button>
       </article>
       <article class="tes">
-        <img src="images/kacangkoro.jpg" alt="alpha">
+        <img src="../IMAGE/kacangkoro.jpg" alt="alpha">
         <p>kacang Koro</p>
         <button class="button"><span>Detail</span></button>
       </article>
       <article class="tes">
-        <img src="images/jagung.jpg" alt="alpha">
+        <img src="../IMAGE/jagung.jpg" alt="alpha">
         <p>Jagung muda baru panen</p>
         <button class="button"><span>Detail</span></button>
       </article>
       <article class="tes">
-        <img src="images/jagung.jpg" alt="alpha">
+        <img src="../IMAGE/jagung.jpg" alt="alpha">
         <p>Jagung muda baru panen</p>
         <button class="button"><span>Detail</span></button>
       </article>

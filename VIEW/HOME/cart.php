@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Index</title>
     <link rel="stylesheet" href="../CSS/main.css">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/cart.css">
     <meta name="viewport" content="width=device-width">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -52,10 +52,10 @@
         </a>
 
         <div class="menu">
-            <a href="index.html">Home</a>
-            <a href="shop.html">Shop</a>
-            <a href="cart.html">Cart</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.php">Home</a>
+            <a href="shop.php">Shop</a>
+            <a href="cart.php">Cart</a>
+            <a href="contact.php">Contact</a>
         </div>
     </div>
 
