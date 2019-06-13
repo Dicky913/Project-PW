@@ -1,1 +1,1 @@
-aaa su
+bngsat 2/3
