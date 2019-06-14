@@ -46,20 +46,12 @@ if (!isset($_SESSION["login"])) {
 
       <a href="my_account.php">My Account</a>
       <i class="fas fa-user"></i>
-      <a href="logout.php">Logout</a>
+      <a href="../../../CONTROLLER/logout.php">Logout</a>
       <i class="fas fa-sign-in-alt"></i>
     </div>
   </div>
   <div class="navbar">
-    <div class="dropdown">
-      <i class="fas fa-bars"></i>
-      <button class="dropbtn">Categories</button>
-      <div class="dropdown-content">
-        <a href="#">Buah buahan</a>
-        <a href="#">Kacang kacangan</a>
-        <a href="#">Sayur sayuran</a>
-      </div>
-    </div>
+
     <a class="btn">
       <span></span>
       <span></span>
