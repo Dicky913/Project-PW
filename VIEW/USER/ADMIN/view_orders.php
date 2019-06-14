@@ -55,7 +55,7 @@
     </tr>
 
     <tr align="center" bgcolor="skyblue">
-      <th>id</th>
+      <th>No</th>
       <th>Product (S)</th>
       <th>Quantity</th>
       <th>Invoice No</th>
@@ -67,7 +67,7 @@
       <td>opalbedel@gmail.com</td>
       <td>5<</td> <td>5ftydsyrd36</td>
       <td>03-06-99</td>
-      <td><a href="#">Complete Order</a></td>
+      <td><a href="#">Konfirmasi Pembayaran</a></td>
 
     </tr>
   </table>
