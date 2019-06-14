@@ -90,7 +90,7 @@ $data = thisquery("SELECT * FROM barang");
       <td>
         <center>
           <a href="#">Edit</a>
-          <a href="#">Hapus</a>
+          <a href="../../../CONTROLLER/admin_hapusbarang.php?id=<?php echo $dt["kd_barang"] ?>" onclick="return confirm('Apakah Yakin Akan Menghapus Data ini?')">Hapus</a>
         </center>
       </td>
       <tr>

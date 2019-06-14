@@ -14,3 +14,12 @@ function thisquery($query)
     }
     return $rows;
 }
+
+function hapusbarang($id)
+{
+    global $conn;
+
+    mysqli_query($conn, "DELETE FROM barang WHERE kd_barang = $id");
+
+    return mysqli_affected_rows($conn);
+}
