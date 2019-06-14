@@ -83,7 +83,7 @@ $data = thisquery("SELECT * FROM pembeli");
       <td><?php echo $dt["no_hp"] ?></td>
       <td>
         <center>
-          <a href="#">Hapus</a>
+          <a href="../../../CONTROLLER/admin_hapuspembeli.php?id=<?php echo $dt["id_pembeli"] ?>" onclick="return confirm('Apakah Yakin Akan Menghapus Data ini?')">Hapus</a>
         </center>
       </td>
       <tr>

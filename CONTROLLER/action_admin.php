@@ -32,3 +32,12 @@ function hapuspetani($id)
 
     return mysqli_affected_rows($conn);
 }
+
+function hapuspembeli($id)
+{
+    global $conn;
+
+    mysqli_query($conn, "DELETE FROM pembeli WHERE id_pembeli = $id");
+
+    return mysqli_affected_rows($conn);
+}
