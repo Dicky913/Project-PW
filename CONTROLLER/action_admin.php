@@ -23,3 +23,12 @@ function hapusbarang($id)
 
     return mysqli_affected_rows($conn);
 }
+
+function hapuspetani($id)
+{
+    global $conn;
+
+    mysqli_query($conn, "DELETE FROM petani WHERE id_petani = $id");
+
+    return mysqli_affected_rows($conn);
+}

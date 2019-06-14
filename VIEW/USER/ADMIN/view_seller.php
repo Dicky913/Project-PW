@@ -85,7 +85,7 @@ $data = thisquery("SELECT * FROM petani");
       <td><?php echo $dt["no_hp"] ?></td>
       <td>
         <center>
-          <a href="#">Hapus</a>
+          <a href="../../../CONTROLLER/admin_hapuspetani.php?id=<?php echo $dt["id_petani"] ?>" onclick="return confirm('Apakah Yakin Akan Menghapus Data ini?')">Hapus</a>
         </center>
       </td>
       <tr>

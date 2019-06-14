@@ -46,8 +46,6 @@ $data = thisquery("SELECT * FROM pembeli");
 
     <div class="menu">
       <a href="view_product.php">View All Products</a>
-      <a href="insert_cat.php">Insert New Category</a>
-      <a href="view_cats.php">View All Categories</a>
       <a href="view_seller.php">View All Seller</a>
       <a href="view_customers.php">View Customers</a>
       <a href="view_orders.php">View Orders</a>
