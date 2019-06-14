@@ -37,22 +37,27 @@ if (isset($_POST["login"])) {
 </head>
 
 <body>
-    <div class="box">
-        <div class="login-box">
-            <h1>Login Pembeli</h1>
-            <div class="textbox">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Username">
-            </div>
+    <form action="" method="post">
+        <div class="box">
+            <div class="login-box">
+                <h1>Login Pembeli</h1>
+                <div class="textbox">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" name="email">
+                </div>
 
-            <div class="textbox">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Password">
-            </div>
+                <div class="textbox">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password">
+                </div>
+                <?php if (isset($error)) : ?>
+                    <p style="color:red;">Password atau Username salah</p>
+                <?php endif ?>
 
-            <input type="button" class="btn" value="Sign in">
+                <input type="submit" class="btn" value="Sign in" name="login">
+            </div>
         </div>
-    </div>
+    </form>
 </body>
 
 </html>
