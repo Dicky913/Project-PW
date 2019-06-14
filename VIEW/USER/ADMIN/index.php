@@ -8,7 +8,7 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
-$data = thisquery("SELECT * FROM petani");
+
 
 ?>
 

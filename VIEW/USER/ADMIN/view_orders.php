@@ -35,7 +35,7 @@
     </a>
 
     <div class="menu">
-      <a href="shop.php">View All Products</a>
+      <a href="view_product.php">View All Products</a>
       <a href="insert_cat.php">Insert New Category</a>
       <a href="view_cats.php">View All Categories</a>
       <a href="view_seller.php">View All Seller</a>

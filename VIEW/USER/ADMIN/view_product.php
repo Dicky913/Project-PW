@@ -1,3 +1,13 @@
+<?php
+include '../../../CONTROLLER/action_admin.php';
+session_start();
+
+if (!isset($_SESSION["login"])) {
+  header("Location: login_admin.php");
+  exit;
+}
+$data = thisquery("SELECT * FROM barang");
+?>
 <!DOCTYPE html>
 <html>
 
@@ -54,31 +64,38 @@
     </div>
   </div>
   <table width="795" align="center" bgcolor="yellow">
-
-
     <tr align="center">
       <td colspan="6">
         <h2>View All Products Here</h2>
       </td>
     </tr>
-
     <tr align="center" bgcolor="skyblue">
       <th>S.N</th>
-      <th>Title</th>
+      <th>Nama</th>
       <th>Image</th>
       <th>Price</th>
-      <th>Edit</th>
-      <th>Delete</th>
+      <th>Stok</th>
+      <th>Kategori</th>
+      <th>Aksi</th>
     </tr>
-
-    <tr align="center">
-      <td>1</td>
-      <td>Apel</td>
-      <td><img src="#" width="60" height="60" /></td>
-      <td>20.000</td>
-      <td><a href="#">Edit</a></td>
-      <td><a href="#">Delete</a></td>
-
+    <?php $i = 1; ?>
+    <?php foreach ($data as $dt) : ?>
+      </tr>
+      <td><?php echo $i ?></td>
+      <td><?php echo $dt["Nm_barang"] ?></td>
+      <td>Belum ada</td>
+      <td><?php echo $dt["harga"] ?></td>
+      <td><?php echo $dt["stok"] ?></td>
+      <td><?php echo $dt["kategori"] ?></td>
+      <td>
+        <center>
+          <a href="#">Edit</a>
+          <a href="#">Hapus</a>
+        </center>
+      </td>
+      <tr>
+        <?php $i++; ?>
+      <?php endforeach; ?>
     </tr>
   </table>
   </div>

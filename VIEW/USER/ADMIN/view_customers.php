@@ -1,3 +1,13 @@
+<?php
+include '../../../CONTROLLER/action_admin.php';
+session_start();
+
+if (!isset($_SESSION["login"])) {
+  header("Location: login_admin.php");
+  exit;
+}
+$data = thisquery("SELECT * FROM pembeli");
+?>
 <!DOCTYPE html>
 <html>
 
@@ -50,24 +60,38 @@
 
     <tr align="center">
       <td colspan="6">
-        <h2>View All ustomer Here</h2>
+        <h2>View All Seller Here</h2>
       </td>
     </tr>
 
     <tr align="center" bgcolor="skyblue">
-      <th>ID</th>
-      <th>Name</th>
+      <th>No</th>
+      <th>Nama</th>
       <th>Email</th>
       <th>Image</th>
-      <th>Delete</th>
+      <th>Alamat</th>
+      <th>Nomor Hp</th>
+      <th>Aksi</th>
     </tr>
     <tr align="center">
-      <td>1</td>
-      <td>DICKYYYYY</td>
-      <td>DICKYBEDEL@GMAIL.COM</td>
-      <td><img src="#" width="50" height="50" /></td>
-      <td><a href="#">Delete</a></td>
-
+      <?php $i = 1; ?>
+      <?php foreach ($data as $dt) : ?>
+      </tr>
+      <td><?php echo $i ?></td>
+      <td><?php echo $dt["nama"] ?></td>
+      <td><?php echo $dt["email"] ?></td>
+      <td>Belum ada</td>
+      <td><?php echo $dt["alamat"] ?></td>
+      <td><?php echo $dt["no_hp"] ?></td>
+      <td>
+        <center>
+          <a href="#">Hapus</a>
+        </center>
+      </td>
+      <tr>
+        <?php $i++; ?>
+      <?php endforeach; ?>
+    </tr>
     </tr>
 
 
