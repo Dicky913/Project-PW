@@ -1,3 +1,32 @@
+<?php
+include '../../../CONTROLLER/action_pembeli.php';
+
+session_start();
+
+if (isset($_POST["login"])) {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    $result = mysqli_query($conn, "SELECT * FROM pembeli WHERE email= '$email'");
+
+    //cek username
+    //mysqli_num_rows() adalah fungsi yg menghitung berapa baris yang dikembalikan
+    if (mysqli_num_rows($result) === 1) {
+
+        //cek passwordnya
+        $row = mysqli_fetch_assoc($result);
+        if ($password === $row['password']) {
+
+            $_SESSION["login"] = true;
+
+            header("Location: indexpembeli.php");
+            exit;
+        }
+    }
+
+    $error = true;
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -8,22 +37,27 @@
 </head>
 
 <body>
-    <div class="box">
-        <div class="login-box">
-            <h1>Login Pembeli</h1>
-            <div class="textbox">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Username">
-            </div>
+    <form action="" method="post">
+        <div class="box">
+            <div class="login-box">
+                <h1>Login Pembeli</h1>
+                <div class="textbox">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" name="email">
+                </div>
 
-            <div class="textbox">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Password">
-            </div>
+                <div class="textbox">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password">
+                </div>
+                <?php if (isset($error)) : ?>
+                    <p style="color:red;">Password atau Username salah</p>
+                <?php endif ?>
 
-            <input type="button" class="btn" value="Sign in">
+                <input type="submit" class="btn" value="Sign in" name="login">
+            </div>
         </div>
-    </div>
+    </form>
 </body>
 
 </html>
