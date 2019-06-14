@@ -1,2 +1,2 @@
 bngsat 2/3 
-okwkoawwokao
+okwko ajing kontol
