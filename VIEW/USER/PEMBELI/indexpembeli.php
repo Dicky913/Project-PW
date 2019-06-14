@@ -44,7 +44,7 @@ if (!isset($_SESSION["login"])) {
     </div>
     <div class="menu">
 
-      <a href="my_account.php">My Account</a>
+      <a href="my_account.php?id=<?php echo $_SESSION['id'] ?>">My Account</a>
       <i class="fas fa-user"></i>
       <a href="../../../CONTROLLER/logout.php">Logout</a>
       <i class="fas fa-sign-in-alt"></i>

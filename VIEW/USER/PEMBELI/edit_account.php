@@ -1,3 +1,43 @@
+<?php
+include '../../../CONTROLLER/action_pembeli.php';
+session_start();
+
+//jika belum login, maka session["login] belum terbentuk dan tidak boleh masuk ke index
+if (!isset($_SESSION["login"])) {
+	header("Location: login_pembeli.php");
+	exit;
+}
+
+//untuk ubah data pake dibawah ini
+//ambil data di URL
+$id = $_SESSION['id'];
+//query data mahasiswa berdasarkan idnya
+$data = thisquery("SELECT * FROM pembeli WHERE id_pembeli = $id")[0];
+
+//kenapa adad [0] di akhir query? karena stlah di ambil datanya disimpan dalam array kosong($rows) makanya harus gitu
+
+//cek apakah tombol submit sudah ditekan atau belum
+if (isset($_POST["submit"])) {
+	//cek apakah data berhasil diubah atau tidak
+	//jika di var_dump() mysqli_affected_rows hanya meng-outpukan kan 1 jika ada baris yg berubah(berhasil) dan -1 jika gagal
+	if (ubah($_POST) > 0) {
+		//karena difunction yg menjadi returnnya adalah mysqli_affected_rows maka disini hanya di cek saja nilainya berapa
+		echo "
+            <script>
+                alert('Data Berhasil Diubah');
+                document.location.href = 'index.php';
+            </script>
+        ";
+	} else {
+		echo "
+            <script>
+                alert('Gagal');
+                document.location.href = 'index.php';
+            </script>
+        ";
+	}
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -29,7 +69,7 @@
 		<div class="menu">
 			<a href="indexpembeli.php">Home</a>
 			<i class="fas fa-home"></i>
-			<a href="logout.php">Logout</a>
+			<a href="../../../CONTROLLER/logout.php">Logout</a>
 			<i class="fas fa-sign-in-alt"></i>
 		</div>
 	</div>
@@ -61,36 +101,41 @@
 						<h2>Update your Account</h2>
 					</td>
 				</tr>
-
+				<tr>
+					<input type="hidden" name="id" value="<?php echo $data["id"] ?>">
+				</tr>
 				<tr>
 					<td align="right">Customer Name:</td>
-					<td><input type="text" name="c_name" value="" required /></td>
+					<td><input type="text" name="nama" id="nama" required value="<?php echo $data["nama"] ?>"></td>
 				</tr>
 
 				<tr>
 					<td align="right">Customer Email:</td>
-					<td><input type="text" name="c_email" value="" required /></td>
+					<td><input type="text" name="email" id="email" required value="<?php echo $data["email"] ?>"></td>
 				</tr>
 
 				<tr>
 					<td align="right">Customer Password:</td>
-					<td><input type="password" name="c_pass" value="" required /></td>
+					<td><input type="password" name="password" id="password" required value="<?php echo $data["password"] ?>"></td>
 				</tr>
 
 				<tr>
 					<td align="right">Customer Image:</td>
-					<td><input type="file" name="c_image" /><img src="customer_images/" width="50" height="50" /></td>
+					<td>
+						<img src="**/<?php echo $data['gambar']; ?>" alt="" width="120">
+						<input type="file" name="gambar" id="gambar">
+					</td>
 				</tr>
 
 				<tr>
 					<td align="right">Customer Contact:</td>
-					<td><input type="text" name="c_contact" value="" /></td>
+					<td><input type="text" name="no_hp" id="no_hp" required value="<?php echo $data["no_hp"] ?>"></td>
 				</tr>
 
 
 
 
-				<tr align="center">
+				<tr align=" center">
 					<td colspan="6"><input type="submit" name="update" value="Update Account" /></td>
 				</tr>
 

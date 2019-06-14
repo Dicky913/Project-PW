@@ -44,7 +44,7 @@ function thisquery($query)
     $result = mysqli_query($conn, $query);
     //siapkan array kosong penampung data yang akan diimport dari db
     $rows  = [];
-    while ($row = mysqli_fetch_assoc($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         //ini maksudnya agar setiap data yang diambil ke dn oleh $row akan disimpan dalam array $rows
         $rows[] = $row;
     }

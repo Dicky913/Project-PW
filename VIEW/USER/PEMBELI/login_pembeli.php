@@ -14,7 +14,8 @@ if (isset($_POST["login"])) {
     if (mysqli_num_rows($result) === 1) {
 
         //cek passwordnya
-        $row = mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_array($result);
+        $_SESSION['id'] = $row['id_pembeli'];
         if ($password === $row['password']) {
 
             $_SESSION["login"] = true;
