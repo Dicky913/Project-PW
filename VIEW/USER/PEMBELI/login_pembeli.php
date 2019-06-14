@@ -1,3 +1,32 @@
+<?php
+include '../../../CONTROLLER/action_pembeli.php';
+
+session_start();
+
+if (isset($_POST["login"])) {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    $result = mysqli_query($conn, "SELECT * FROM pembeli WHERE email= '$email'");
+
+    //cek username
+    //mysqli_num_rows() adalah fungsi yg menghitung berapa baris yang dikembalikan
+    if (mysqli_num_rows($result) === 1) {
+
+        //cek passwordnya
+        $row = mysqli_fetch_assoc($result);
+        if ($password === $row['password']) {
+
+            $_SESSION["login"] = true;
+
+            header("Location: indexpembeli.php");
+            exit;
+        }
+    }
+
+    $error = true;
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
