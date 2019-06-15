@@ -1,3 +1,42 @@
+<?php
+include '../../../CONTROLLER/action_pembeli.php';
+session_start();
+
+//jika belum login, maka session["login] belum terbentuk dan tidak boleh masuk ke index
+if (!isset($_SESSION["login"])) {
+  header("Location: login_pembeli.php");
+  exit;
+}
+
+//untuk ubah data pake dibawah ini
+//ambil data di URL
+$id = $_SESSION['id'];
+//query data mahasiswa berdasarkan idnya
+$data = thisquery("SELECT * FROM pembeli WHERE id_pembeli = $id")[0];;
+
+//cek apakah tombol submit sudah ditekan atau belum
+if (isset($_POST["submit"])) {
+  //jika di var_dump() mysqli_affected_rows hanya meng-outpukan kan 1 jika ada baris yg berubah(berhasil) dan -1 jika gagal
+  if (ubahpassword($_POST) > 0) {
+
+    //karena difunction yg menjadi returnnya adalah mysqli_affected_rows maka disini hanya di cek saja nilainya berapa
+    echo "
+            <script>
+                alert('Data Berhasil Diubah');
+                document.location.href = 'my_account.php';
+            </script>
+        ";
+  } else {
+    echo "
+            <script>
+                alert('Gagal');
+                document.location.href = 'change_pass.php';
+            </script>
+        ";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -53,22 +92,27 @@
 
       <table align="center" width="600">
         <tr>
+          <input type="hidden" name="id" value="<?php echo $data["id_pembeli"] ?>">
+        </tr>
+
+        <tr>
           <td align="right"><b>Enter Current Password:</b></td>
-          <td><input type="password" name="current_pass" required></td>
+          <td><input type="password" name="password" required></td>
+          <td><input type="hidden" name="password_confirm" value="<?php echo $data["password"] ?>"></td>
         </tr>
 
         <tr>
           <td align="right"><b>Enter New Password:</b></td>
-          <td><input type="password" name="new_pass" required></td>
+          <td><input type="password" name="passwordbaru" required></td>
         </tr>
 
         <tr>
           <td align="right"><b>Enter New Password Again:</b></td>
-          <td><input type="password" name="new_pass_again" required></td>
+          <td><input type="password" name="passwordbaru_confirm" required></td>
         </tr>
 
         <tr align="center">
-          <td colspan="3"><input type="submit" name="change_pass" value="Change Password" /></td>
+          <td colspan="3"><input type="submit" name="submit" value="Change Password" /></td>
         </tr>
 
       </table>

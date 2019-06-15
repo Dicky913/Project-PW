@@ -102,7 +102,7 @@ if (isset($_POST["submit"])) {
 					</td>
 				</tr>
 				<tr>
-					<input type="hidden" name="id" value="<?php echo $data["id"] ?>">
+					<input type="hidden" name="id" value="<?php echo $data["id_pembeli"] ?>">
 				</tr>
 				<tr>
 					<td align="right">Customer Name:</td>
