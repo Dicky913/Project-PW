@@ -1,15 +1,15 @@
 <?php
-include '../../../CONTROLLER/action_pembeli.php';
+include '../../../CONTROLLER/action_petani.php';
 session_start();
 //jadi gabisa masuk kalo ga login
 
 if (!isset($_SESSION["login"])) {
-  header("Location: login_pembeli.php");
+  header("Location: login_petani.php");
   exit;
 }
 
 $id = $_SESSION['id'];
-$data = thisquery("SELECT * FROM pembeli WHERE id_pembeli = $id")[0];
+$data = thisquery("SELECT * FROM petani WHERE id_petani = $id")[0];
 
 ?>
 <!DOCTYPE html>
@@ -63,7 +63,7 @@ $data = thisquery("SELECT * FROM pembeli WHERE id_pembeli = $id")[0];
     </a>
 
     <div class="menu">
-      <a href="indexpembeli.php">Home</a>
+      <a href="indexpetani.php">Home</a>
       <a href="shop.php">Shop</a>
       <a href="cart.php">Cart</a>
       <a href="contact.php">Contact</a>
