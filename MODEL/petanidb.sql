@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Jun 2019 pada 10.27
+-- Waktu pembuatan: 15 Jun 2019 pada 21.20
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.2
 
@@ -55,8 +55,16 @@ CREATE TABLE `barang` (
   `harga` int(50) NOT NULL,
   `Nm_barang` varchar(255) NOT NULL,
   `kategori` varchar(255) NOT NULL,
+  `gambar` varchar(255) NOT NULL,
   `id_admin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `barang`
+--
+
+INSERT INTO `barang` (`kd_barang`, `stok`, `harga`, `Nm_barang`, `kategori`, `gambar`, `id_admin`) VALUES
+(1, 20, 50000, 'Cabe Merah', 'Sayur-Sayuran', '', 1);
 
 -- --------------------------------------------------------
 
@@ -82,6 +90,7 @@ CREATE TABLE `pembeli` (
   `alamat` varchar(255) NOT NULL,
   `no_hp` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `gambar` varchar(255) NOT NULL,
   `id_admin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -89,9 +98,9 @@ CREATE TABLE `pembeli` (
 -- Dumping data untuk tabel `pembeli`
 --
 
-INSERT INTO `pembeli` (`id_pembeli`, `nama`, `password`, `alamat`, `no_hp`, `email`, `id_admin`) VALUES
-(1, 'Prabowo', '123p', 'labuapi', '087865771836', 'bpn@02.com', 1),
-(4, 'Peternak', '1234', 'Labuapi', '087865771836', 'pembeli@gmail.com', 1);
+INSERT INTO `pembeli` (`id_pembeli`, `nama`, `password`, `alamat`, `no_hp`, `email`, `gambar`, `id_admin`) VALUES
+(4, 'Peternak', '0987', 'Labuapi', '087865771836', 'pembeli@gmail.com', '5d0529633d929.jpg', 1),
+(5, 'Aqua', '12345', 'Pusuk', '087865771836', 'aqua@gmail.com', '5d05392de4c04.png', 1);
 
 -- --------------------------------------------------------
 
@@ -106,6 +115,7 @@ CREATE TABLE `petani` (
   `alamat` varchar(255) NOT NULL,
   `no_hp` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `gambar` varchar(255) NOT NULL,
   `id_admin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -113,9 +123,8 @@ CREATE TABLE `petani` (
 -- Dumping data untuk tabel `petani`
 --
 
-INSERT INTO `petani` (`id_petani`, `nama`, `password`, `alamat`, `no_hp`, `email`, `id_admin`) VALUES
-(6, 'Petani Sejahtera', '123qwe', 'Labuapi', '087865771836', 'petanisej@gmail.com', 1),
-(7, 'Muhammad Naufal Rizqullah', '123', 'Labuapi', '087865771836', 'email@gmail.com', 1);
+INSERT INTO `petani` (`id_petani`, `nama`, `password`, `alamat`, `no_hp`, `email`, `gambar`, `id_admin`) VALUES
+(6, 'Petani Sejahtera', '123qwe', 'Labuapi', '087865771836', 'petanisej@gmail.com', '', 1);
 
 -- --------------------------------------------------------
 
@@ -204,19 +213,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `kd_barang` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kd_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembeli`
 --
 ALTER TABLE `pembeli`
-  MODIFY `id_pembeli` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pembeli` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `petani`
 --
 ALTER TABLE `petani`
-  MODIFY `id_petani` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_petani` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
