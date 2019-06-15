@@ -152,7 +152,7 @@ if (isset($_POST["submit"])) {
 
 
 	</div>
-	<div class="footer" align="center">
+	<!-- <div class="footer" align="center">
 		<table width=100%>
 			<tr>
 
@@ -174,7 +174,7 @@ if (isset($_POST["submit"])) {
 			</tr>
 		</table>
 
-	</div>
+	</div> -->
 </body>
 
 </html>
