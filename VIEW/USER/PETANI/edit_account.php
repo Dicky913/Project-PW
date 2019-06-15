@@ -105,17 +105,17 @@ if (isset($_POST["submit"])) {
 					<input type="hidden" name="id" value="<?php echo $data["id_petani"] ?>">
 				</tr>
 				<tr>
-					<td align="right">Customer Name:</td>
+					<td align="right">Seller Name:</td>
 					<td><input type="text" name="nama" id="nama" required value="<?php echo $data["nama"] ?>"></td>
 				</tr>
 
 				<tr>
-					<td align="right">Customer Address:</td>
+					<td align="right">Seller Address:</td>
 					<td><input type="text" name="alamat" id="alamat" required value="<?php echo $data["alamat"] ?>"></td>
 				</tr>
 
 				<tr>
-					<td align="right">Customer Email:</td>
+					<td align="right">Seller Email:</td>
 					<td><input type="text" name="email" id="email" required value="<?php echo $data["email"] ?>"></td>
 				</tr>
 
@@ -124,7 +124,7 @@ if (isset($_POST["submit"])) {
 				</tr>
 
 				<tr>
-					<td align="right">Customer Image:</td>
+					<td align="right">Seller Image:</td>
 					<td>
 						<input type="hidden" name="gambarLama" value="<?php echo $data["gambar"] ?>">
 						<img src="../../IMAGE/images_petani/<?php echo $data["gambar"] ?>" alt="" width="120">
@@ -133,7 +133,7 @@ if (isset($_POST["submit"])) {
 				</tr>
 
 				<tr>
-					<td align="right">Customer Contact:</td>
+					<td align="right">Seller Contact:</td>
 					<td><input type="text" name="no_hp" id="no_hp" required value="<?php echo $data["no_hp"] ?>"></td>
 				</tr>
 
