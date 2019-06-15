@@ -25,14 +25,14 @@ if (isset($_POST["submit"])) {
 		echo "
             <script>
                 alert('Data Berhasil Diubah');
-                document.location.href = 'index.php';
+                document.location.href = 'indexpembeli.php';
             </script>
         ";
 	} else {
 		echo "
             <script>
                 alert('Gagal');
-                document.location.href = 'index.php';
+                document.location.href = 'indexpembeli.php';
             </script>
         ";
 	}
@@ -115,6 +115,7 @@ if (isset($_POST["submit"])) {
 				</tr>
 
 				<tr>
+					<td align="right">Customer Email:</td>
 					<td><input type="text" name="email" id="email" required value="<?php echo $data["email"] ?>"></td>
 				</tr>
 
