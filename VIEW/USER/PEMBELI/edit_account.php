@@ -110,19 +110,23 @@ if (isset($_POST["submit"])) {
 				</tr>
 
 				<tr>
-					<td align="right">Customer Email:</td>
+					<td align="right">Customer Address:</td>
+					<td><input type="text" name="alamat" id="alamat" required value="<?php echo $data["alamat"] ?>"></td>
+				</tr>
+
+				<tr>
 					<td><input type="text" name="email" id="email" required value="<?php echo $data["email"] ?>"></td>
 				</tr>
 
 				<tr>
-					<td align="right">Customer Password:</td>
-					<td><input type="password" name="password" id="password" required value="<?php echo $data["password"] ?>"></td>
+					<td><input type="hidden" name="password" id="password" required value="<?php echo $data["password"] ?>"></td>
 				</tr>
 
 				<tr>
 					<td align="right">Customer Image:</td>
 					<td>
-						<img src="**/<?php echo $data['gambar']; ?>" alt="" width="120">
+						<input type="hidden" name="gambarLama" value="<?php echo $data["gambar"] ?>">
+						<img src="images/<?php echo $data["gambar"] ?>" alt="" width="120">
 						<input type="file" name="gambar" id="gambar">
 					</td>
 				</tr>
@@ -136,7 +140,7 @@ if (isset($_POST["submit"])) {
 
 
 				<tr align=" center">
-					<td colspan="6"><input type="submit" name="update" value="Update Account" /></td>
+					<td colspan="6"><input type="submit" name="submit" value="Update Account" /></td>
 				</tr>
 
 
