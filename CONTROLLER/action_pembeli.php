@@ -166,7 +166,7 @@ function upload()
 
     //lolos pengecekan, gambar setiap diupload
     // move_uploaded_file adalah fungsi untuk memidahkan file yang sudah diupload dari tmp ke tempat tujuan
-    $path = "images/" . $namaFileBaru;
+    $path = "../../IMAGE/images_pembeli/" . $namaFileBaru;
     move_uploaded_file($tmpFile, $path);
 
     return $namaFileBaru;

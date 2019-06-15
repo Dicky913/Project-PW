@@ -127,7 +127,7 @@ if (isset($_POST["submit"])) {
 					<td align="right">Customer Image:</td>
 					<td>
 						<input type="hidden" name="gambarLama" value="<?php echo $data["gambar"] ?>">
-						<img src="images/<?php echo $data["gambar"] ?>" alt="" width="120">
+						<img src="../../IMAGE/images_pembeli/<?php echo $data["gambar"] ?>" alt="" width="120">
 						<input type="file" name="gambar" id="gambar">
 					</td>
 				</tr>
