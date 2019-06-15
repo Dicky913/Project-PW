@@ -7,6 +7,10 @@ if (!isset($_SESSION["login"])) {
   header("Location: login_pembeli.php");
   exit;
 }
+
+$id = $_SESSION['id'];
+$data = thisquery("SELECT * FROM pembeli WHERE id_pembeli = $id")[0];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,7 +70,7 @@ if (!isset($_SESSION["login"])) {
     </div>
   </div>
   <div class="tubuh">
-    <h2>Hi!!.........SELAMAT DATANG DI WEBSITE PAKTANI</h2>
+    <h2>Hi! "<?php echo $data["nama"] ?>" SELAMAT DATANG DI WEBSITE PAKTANI</h2>
     <div class="slider">
     </div>
   </div>
