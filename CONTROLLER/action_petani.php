@@ -34,7 +34,7 @@ function register($data)
     }
 
     //tambahkan user baru ke database
-    mysqli_query($conn, "INSERT INTO petani VALUES ('', '$nama', '$password', '$alamat', '$no_hp', '$email', '1')");
+    mysqli_query($conn, "INSERT INTO petani VALUES ('', '$nama', '$password', '$alamat', '$no_hp', '$email', '', '1')");
     return mysqli_affected_rows($conn);
 }
 
