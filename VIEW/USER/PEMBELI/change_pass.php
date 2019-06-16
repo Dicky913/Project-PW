@@ -80,6 +80,7 @@ if (isset($_POST["submit"])) {
     </a>
 
     <div class="menu">
+      <a href="profile.php">Profile</a>
       <a href="my_orders.php">My Orders</a>
       <a href="edit_account.php">Edit Account</a>
       <a href="change_pass.php">Change Password</a>
