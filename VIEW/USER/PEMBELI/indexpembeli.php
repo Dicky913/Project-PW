@@ -7,6 +7,10 @@ if (!isset($_SESSION["login"])) {
   header("Location: login_pembeli.php");
   exit;
 }
+
+$id = $_SESSION['id'];
+$data = thisquery("SELECT * FROM pembeli WHERE id_pembeli = $id")[0];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,7 +48,7 @@ if (!isset($_SESSION["login"])) {
     </div>
     <div class="menu">
 
-      <a href="my_account.php">My Account</a>
+      <a href="my_account.php?id=<?php echo $_SESSION['id'] ?>">My Account</a>
       <i class="fas fa-user"></i>
       <a href="../../../CONTROLLER/logout.php">Logout</a>
       <i class="fas fa-sign-in-alt"></i>
@@ -66,7 +70,7 @@ if (!isset($_SESSION["login"])) {
     </div>
   </div>
   <div class="tubuh">
-    <h2>Hi!!.........SELAMAT DATANG DI WEBSITE PAKTANI</h2>
+    <h2>Hi! "<?php echo $data["nama"] ?>" SELAMAT DATANG DI WEBSITE PAKTANI</h2>
     <div class="slider">
     </div>
   </div>

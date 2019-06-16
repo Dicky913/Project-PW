@@ -1,3 +1,17 @@
+<?php
+include '../../../CONTROLLER/action_pembeli.php';
+session_start();
+//jadi gabisa masuk kalo ga login
+
+if (!isset($_SESSION["login"])) {
+  header("Location: login_pembeli.php");
+  exit;
+}
+
+$id = $_SESSION['id'];
+$data = thisquery("SELECT * FROM pembeli WHERE id_pembeli = $id")[0];
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -29,7 +43,7 @@
     <div class="menu">
       <a href="indexpembeli.php">Home</a>
       <i class="fas fa-home"></i>
-      <a href="logout.php">Logout</a>
+      <a href="../../../CONTROLLER/logout.php">Logout</a>
       <i class="fas fa-sign-in-alt"></i>
     </div>
   </div>
@@ -48,7 +62,7 @@
     </div>
   </div>
   <div class="tubuh">
-    <h2>HI! .... Manage Your Account</h2>
+    <h2>HI! "<?php echo $data["nama"] ?>" Manage Your Account</h2>
     <div class="slider">
     </div>
   </div>
