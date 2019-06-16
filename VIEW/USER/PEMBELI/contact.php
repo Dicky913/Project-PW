@@ -43,10 +43,10 @@
     </a>
 
     <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="cart.html">Cart</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.php">Home</a>
+      <a href="shop.php">Shop</a>
+      <a href="cart.php">Cart</a>
+      <a href="contact.php">Contact</a>
     </div>
   </div>
   <br><br><br><br><br>
