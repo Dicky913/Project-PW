@@ -13,8 +13,8 @@
         <div class="box">
             <p class="texthead">Register sebagai?</p>
             <br>
-            <button class="button" onclick="location.href='PETANI/Register_petani.php'">Petani</button>
-            <button class="button" onclick="location.href='PEMBELI/Register_pembeli.php'">Pembeli</button>
+            <button class="button" onclick="location.href='PETANI/register_petani.php'">Petani</button>
+            <button class="button" onclick="location.href='PEMBELI/register_pembeli.php'">Pembeli</button>
 
         </div>
     </body>
