@@ -8,33 +8,78 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
     <style type="text/css">
-        .sub-barang {
-            background-color: yellow;
-            text-align: center;
-            padding: 24px;
-            width: 210px;
-            float: left;
-            border: 3px;
-            -moz-border-radius: 14px;
-            -khtml-border-radius: 14px;
-            -webkit-border-radius: 14px;
-            margin: 5px 5px 10px 5px;
-        }
+        .tubuh {
+      width: 100%;
+      height: 800px;
+    }
+    .agenda, .artikel{
+    margin-bottom: 40px;
+    width: 100%;
+    margin-left: 500px;
+}
+.tes{
+    float: left;
+    border: 2px solid #f1f1f1;
+    border-radius: 5%;
+    padding: 10px;
+    text-align: center;
+    width: 270px;
+    background-color: aqua;
+    height: 250px;
+    margin-right: 30px;
+    margin-bottom: 45px;
+    margin-left: 10px;
+}
 
-        .jdl-brg {
-            font-size: 16px;
-            height: 200px;
-            margin-bottom: 70px;
-            font-family: "Comic Sans MS";
-        }
-    </style>
-
-    <style type="text/css">
-        img {
-            padding: 5px;
-            background-color: 000066;
-            border-radius: 20px;
-        }
+.tes img{
+    width: 50%;
+}
+.tes p{
+    height: 40px;
+    /* padding: 10px; */
+    text-align: left;
+    margin: 0;
+    margin-bottom: 30px;
+}
+.button {
+    border-radius: 4px;
+    background-color: #5cd65c;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 15px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  
     </style>
 
 
@@ -82,92 +127,71 @@
     <br><br>
 
     <div class="tubuh">
-        <div class='sub-barang'>
-            <div class='jdl-brg'>
-                <a>Jerook</a>
-                <div class='jdl-brg'>
 
-                    <img border=2 src='images/apel.jpg' border=0 width=200 height=200>
-                    <a>Rp. 90000</a>
-                    <strong></strong>
+    <center><h2>- ALL PRODUCT -</h2></center>
+    <section>
+          <article class="tes">
+              <img src="images/jagung.jpg" alt="alpha"><br>
+             <h3>Jagung Muda</h3>
+              <span class="name" style='background-color: white'><b>Rp.23000</b></span><br>
+              <button class="button"><span>Detail</span></button>
+          </article>
+      </section>
 
-                    <br><a href='#'>Detail</a></div>
-            </div>
-        </div>
-        <div class="tubuh">
-            <div class='sub-barang'>
-                <div class='jdl-brg'>
-                    <a>Jerook</a>
-                    <div class='jdl-brg'>
-                        <img border=2 src='../ngadimin/produk/foto/$r[gambar]' border=0 width=200 height=200>
-                        <a>Rp. 90000</a>
-                        <strong></strong>
+      <section>
+          <article class="tes">
+              <img src="images/jagung.jpg" alt="alpha"><br>
+             <h3>Jagung Muda</h3>
+              <span class="name" style='background-color: white'><b>Rp.23000</b></span><br>
+              <button class="button"><span>Detail</span></button>
+          </article>
+      </section>
 
-                        <br><a href='#'>Detail</a></div>
-                </div>
-            </div>
-            <div class='sub-barang'>
-                <div class='jdl-brg'>
-                    <a>Jerook</a>
-                    <div class='jdl-brg'>
+      <section>
+          <article class="tes">
+              <img src="images/jagung.jpg" alt="alpha"><br>
+             <h3>Jagung Muda</h3>
+              <span class="name" style='background-color: white'><b>Rp.23000</b></span><br>
+              <button class="button"><span>Detail</span></button>
+          </article>
+      </section>
 
-                        <img border=2 src='images/apel.jpg' border=0 width=200 height=200>
-                        <a>Rp. 90000</a>
-                        <strong></strong>
+      <section>
+          <article class="tes">
+              <img src="images/jagung.jpg" alt="alpha"><br>
+             <h3>Jagung Muda</h3>
+              <span class="name" style='background-color: white'><b>Rp.23000</b></span><br>
+              <button class="button"><span>Detail</span></button>
+          </article>
+      </section>
 
-                        <br><a href='detail.php?id=$r[id_produk]&filenya=$r[gambar]'>Detail</a></div>
-                </div>
-            </div>
-            <div class='sub-barang'>
-                <div class='jdl-brg'>
-                    <a>Jerook</a>
-                    <div class='jdl-brg'>
+      <section>
+          <article class="tes">
+              <img src="images/jagung.jpg" alt="alpha"><br>
+             <h3>Jagung Muda</h3>
+              <span class="name" style='background-color: white'><b>Rp.23000</b></span><br>
+              <button class="button"><span>Detail</span></button>
+          </article>
+      </section>
 
-                        <img border=2 src='images/apel.jpg' border=0 width=200 height=200>
-                        <a>Rp. 90000</a>
-                        <strong></strong>
+      <section>
+          <article class="tes">
+              <img src="images/jagung.jpg" alt="alpha"><br>
+             <h3>Jagung Muda</h3>
+              <span class="name" style='background-color: white'><b>Rp.23000</b></span><br>
+              <button class="button"><span>Detail</span></button>
+          </article>
+      </section>
 
-                        <br><a href='#'>Detail</a></div>
-                </div>
-            </div>
-            <div class='sub-barang'>
-                <div class='jdl-brg'>
-                    <a>Jerook</a>
-                    <div class='jdl-brg'>
-
-                        <img border=2 src='images/apel.jpg' border=0 width=200 height=200>
-                        <a>Rp. 90000</a>
-                        <strong></strong>
-
-                        <br><a href='#'>Detail</a></div>
-                </div>
-            </div>
-            <div class='sub-barang'>
-                <div class='jdl-brg'>
-                    <a>Jerook</a>
-                    <div class='jdl-brg'>
-
-                        <img border=2 src='images/apel.jpg' border=0 width=200 height=200>
-                        <a>Rp. 90000</a>
-                        <strong></strong>
-
-                        <br><a href='detail.php?id=$r[id_produk]&filenya=$r[gambar]'>Detail</a></div>
-                </div>
-            </div>
-            <div class='sub-barang'>
-                <div class='jdl-brg'>
-                    <a>Jerook</a>
-                    <div class='jdl-brg'>
-
-                        <img border=2 src='images/apel.jpg' border=0 width=200 height=200>
-                        <a>Rp. 90000</a>
-                        <strong></strong>
-
-                        <br><a href='detail.php?id=$r[id_produk]&filenya=$r[gambar]'>Detail</a></div>
-                </div>
-            </div>
-
-
+      <section>
+          <article class="tes">
+              <img src="images/jagung.jpg" alt="alpha"><br>
+             <h3>Jagung Muda</h3>
+              <span class="name" style='background-color: white'><b>Rp.23000</b></span><br>
+              <button class="button"><span>Detail</span></button>
+          </article>
+      </section>
+      
         </div>
         <div class="footer" align="center">
             <table width=100%>
