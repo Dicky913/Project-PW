@@ -24,8 +24,7 @@ $data = thisquery("SELECT * FROM barang");
     }
 
     img {
-      width: 100%;
-      height: 50%;
+      width: 40%;
     }
   </style>
 </head>
@@ -43,7 +42,7 @@ $data = thisquery("SELECT * FROM barang");
     </a>
     <div class="menu">
 
-      <a href="logout.php">Admin Logout</a>
+      <a href="../../../CONTROLLER/logout.php">Admin Logout</a>
     </div>
   </div>
   <div class="navbar">
@@ -68,29 +67,23 @@ $data = thisquery("SELECT * FROM barang");
       </td>
     </tr>
     <tr align="center" bgcolor="skyblue">
-      <th>S.N</th>
+      <th>No</th>
       <th>Nama</th>
       <th>Image</th>
       <th>Price</th>
       <th>Stok</th>
-      <th>Kategori</th>
-      <th>Aksi</th>
+      <th>Deskripsi</th>
+
     </tr>
     <?php $i = 1; ?>
     <?php foreach ($data as $dt) : ?>
       </tr>
       <td><?php echo $i ?></td>
       <td><?php echo $dt["Nm_barang"] ?></td>
-      <td>Belum ada</td>
+      <td><img src="../../IMAGE/images_petani/<?php echo $dt["gambar"] ?>" class="tes"></td>
       <td><?php echo $dt["harga"] ?></td>
       <td><?php echo $dt["stok"] ?></td>
-      <td><?php echo $dt["kategori"] ?></td>
-      <td>
-        <center>
-          <a href="#">Edit</a>
-          <a href="../../../CONTROLLER/admin_hapusbarang.php?id=<?php echo $dt["kd_barang"] ?>" onclick="return confirm('Apakah Yakin Akan Menghapus Data ini?')">Hapus</a>
-        </center>
-      </td>
+      <td><?php echo $dt["deskripsi"] ?></td>
       <tr>
         <?php $i++; ?>
       <?php endforeach; ?>
