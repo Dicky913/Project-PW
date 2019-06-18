@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION["login"])) {
+  header("Location: login_petani.php");
+  exit;
+}
 include '../../../CONTROLLER/action_petani.php';
 //kasi kondisi jika tombol submit sudah ditekan
 if (isset($_POST["submit"])) {

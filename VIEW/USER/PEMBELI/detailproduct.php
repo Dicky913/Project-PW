@@ -1,10 +1,19 @@
+<?php
+include '../../../CONTROLLER/action_petani.php';
+session_start();
+
+if (!isset($_SESSION["login"])) {
+  header("Location: login_pembeli.php");
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
-  <title>Index</title>
-  <link rel="stylesheet" href="css/main.css">
+  <title>Detail</title>
+  <link rel="stylesheet" href="../../CSS/main.css">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <style>
@@ -121,7 +130,7 @@
     </a>
 
     <div class="menu">
-      <a href="index.php">Home</a>
+      <a href="indexpembeli.php">Home</a>
       <a href="shop.php">Shop</a>
       <a href="cart.php">Cart</a>
       <a href="contact.php">Contact</a>
@@ -130,24 +139,32 @@
   <br><br>
   <div <div class="tubuh">
     <h2>- Detail Product -</h2>
-    <div class="agenda">
-      <center>
-        <section>
-          <article class="tes">
-            <img src="images/jagung.jpg" alt="alpha"><br>
-            <h3>Jagung Muda</h3>
-            <span class="name">Jagung Muda baru panen dari labuapi ssscsc csc sacsac sacsac sacsacsa csaccccccc xac csc sac </span><br><br>
-            <span class="name"><b> Stok : 3 kilogram</b></span><br><br>
-            <span class="name" style='background-color: white'><b>Rp.23000</b></span><br>
-            <button class="button"><span>Add To Cart</span></button>
-          </article>
-        </section>
-      </center>
-    </div>
+    <?php
+    $id = $_GET['kd_barang'];
+    $select_query = "SELECT * FROM barang WHERE kd_barang = $id";
+    $sql = mysqli_query($conn, $select_query) or die(mysql_error());
+    while ($data = mysqli_fetch_array($sql)) { ?>
+
+      <div class="agenda">
+        <center>
+          <section>
+            <article class="tes">
+              <img src="../../IMAGE/images_petani/<?php echo $data["gambar"] ?>" alt="alpha"><br>
+              <h3><?php echo $data["Nm_barang"] ?></h3>
+              <span class="name">Penjelasan: <?php echo $data["deskripsi"] ?></span><br><br>
+              <span class="name"><b>Stok: <?php echo $data["stok"] ?> <?php echo $data["unit"] ?></b></span><br><br>
+              <span class="name"><b>Harga: Rp.<?php echo $data["harga"] ?></b></span><br>
+              <button class="button"><span>Add To Cart</span></button>
+            </article>
+          </section>
+        </center>
+      </div>
+
+    <?php } ?>
 
   </div>
 
-  <div class="footer" align="center">
+  <!-- <div class="footer" align="center">
     <table width=100%>
       <tr>
 
@@ -169,7 +186,7 @@
       </tr>
     </table>
 
-  </div>
+  </div> -->
 </body>
 
 </html>

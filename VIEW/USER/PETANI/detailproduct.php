@@ -1,6 +1,10 @@
 <?php
 session_start();
 include '../../../CONTROLLER/action_petani.php';
+if (!isset($_SESSION["login"])) {
+  header("Location: login_petani.php");
+  exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
