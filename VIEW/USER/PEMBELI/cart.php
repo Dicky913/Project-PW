@@ -1,3 +1,12 @@
+<?php
+include '../../../CONTROLLER/action_petani.php';
+session_start();
+
+if (!isset($_SESSION["login"])) {
+    header("Location: login_pembeli.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 
