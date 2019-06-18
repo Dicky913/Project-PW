@@ -58,9 +58,9 @@
       </tr>
 
       <tr align="center" bgcolor="skyblue">
-        <th>S.N</th>
-        <th>Product (S)</th>
-        <th>Quantity</th>
+        <th>No</th>
+        <th>Nama Produk</th>
+        <th>Jumlah</th>
         <th>Invoice No</th>
         <th>Order Date</th>
         <th>Status</th>
@@ -74,15 +74,6 @@
         <td>12 juni</td>
         <td>menunggu konfirmasi</td>
       </tr>
-      <tr align="center">
-        <td>1</td>
-        <td>Jagung MUda</td>
-        <td>3</td>
-        <td>3213edf</td>
-        <td>12 juni</td>
-        <td>menunggu konfirmasi</td>
-      </tr>
-
     </table>
 
   </div>

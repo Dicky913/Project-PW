@@ -5,6 +5,7 @@ if (!isset($_SESSION["login"])) {
     header("Location: login_pembeli.php");
     exit;
 }
+
 ?>
 <!DOCTYPE html>
 <title>Checkout Page</title>
@@ -64,7 +65,7 @@ if (!isset($_SESSION["login"])) {
         </div>
     </div>
     <div class="tubuh">
-        <h2>SHOPPING CART</h2>
+        <h2>CHECKOUT</h2>
         <form action="" method="post" enctype="multipart/form-data">
             <table align="center" width="700" bgcolor="skyblue">
 
@@ -77,13 +78,13 @@ if (!isset($_SESSION["login"])) {
                 </tr>
 
                 <?php $i = 1 ?>
+                <?php $total = 0; ?>
                 <?php foreach ($_SESSION["keranjang"] as $id_barang => $jumlah) : ?>
                     <!-- kalo yang => biasa utk array, yaitu bagian "key" & "value". -->
                     <?php
                     $select_query = "SELECT * FROM barang WHERE kd_barang = $id_barang";
                     $sql = mysqli_query($conn, $select_query);
                     ?>
-
                     <?php while ($data = mysqli_fetch_array($sql)) { ?>
                         <?php $subharga = $data['harga'] * $jumlah ?>
                         <tr align="center">
@@ -95,8 +96,19 @@ if (!isset($_SESSION["login"])) {
                         </tr>
                         <?php $i += 1; ?>
                     <?php } ?>
+                    <?php $total += $subharga ?>
                 <?php endforeach ?>
+                <tr align="center">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>TOTAL</td>
+                    <td>Rp. <?php echo number_format($total) ?></td>
+                </tr>
             </table>
+            <center>
+                <input type="button" name="checkout" value="Beli" onclick="window.location.href=''">
+            </center>
         </form>
 
     </div>
