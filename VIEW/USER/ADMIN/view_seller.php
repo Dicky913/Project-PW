@@ -33,7 +33,7 @@ $data = thisquery("SELECT * FROM petani");
     </a>
     <div class="menu">
 
-      <a href="logout.php">Admin Logout</a>
+      <a href="../../../CONTROLLER/logout.php">Admin Logout</a>
     </div>
   </div>
   <div class="navbar">
