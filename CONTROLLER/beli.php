@@ -12,4 +12,4 @@ if (isset($_SESSION['keranjang'][$id_barang])) {
 }
 //pindah ke halaman keranjang
 // echo "<script>alert('product Telah masuk Keranjang');</script>";
-header('Location: cart.php');
+header('Location: ../VIEW/USER/PEMBELI/cart.php');

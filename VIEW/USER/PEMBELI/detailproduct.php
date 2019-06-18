@@ -154,7 +154,7 @@ if (!isset($_SESSION["login"])) {
               <span class="name">Penjelasan: <?php echo $data["deskripsi"] ?></span><br><br>
               <span class="name"><b>Stok: <?php echo $data["stok"] ?> <?php echo $data["unit"] ?></b></span><br><br>
               <span class="name"><b>Harga: Rp.<?php echo $data["harga"] ?></b></span><br>
-              <a href="beli.php?kd_barang=<?php echo $data['kd_barang']; ?>"><button class="button"><span>Add To Cart</span></button></a>
+              <a href="../../../CONTROLLER/beli.php?kd_barang=<?php echo $data['kd_barang']; ?>"><button class="button"><span>Add To Cart</span></button></a>
             </article>
           </section>
         </center>

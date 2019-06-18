@@ -93,7 +93,7 @@ if (!isset($_SESSION["login"])) {
                             <td><?php echo $jumlah ?></td>
                             <td>Rp. <?php echo number_format($data['harga']) ?></td>
                             <td>Rp. <?php echo number_format($subharga)  ?></td>
-                            <td><a href="hapuscart.php?id=<?php echo $id_barang ?>">Hapus</a></td>
+                            <td><a href="../../../CONTROLLER/hapuscart.php?id=<?php echo $id_barang ?>">Hapus</a></td>
                         </tr>
                         <?php $i += 1; ?>
                     <?php } ?>
