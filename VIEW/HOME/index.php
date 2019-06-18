@@ -42,15 +42,6 @@ session_start();
 
   </div>
   <div class="navbar">
-    <div class="dropdown">
-      <i class="fas fa-bars"></i>
-      <button class="dropbtn">Categories</button>
-      <div class="dropdown-content">
-        <a href="#">Buah buahan</a>
-        <a href="#">Kacang kacangan</a>
-        <a href="#">Sayur sayuran</a>
-      </div>
-    </div>
     <a class="btn">
       <span></span>
       <span></span>

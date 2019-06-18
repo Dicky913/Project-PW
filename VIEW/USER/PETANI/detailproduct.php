@@ -147,7 +147,7 @@ include '../../../CONTROLLER/action_petani.php';
             <article class="tes">
               <img src="../../IMAGE/images_petani/<?php echo $data["gambar"] ?>" alt="alpha"><br>
               <h3><?php echo $data["Nm_barang"] ?></h3>
-              <span class="name"><?php echo $data["deskripsi"] ?></span><br><br>
+              <span class="name">Penjelasan: <?php echo $data["deskripsi"] ?></span><br><br>
               <span class="name"><b>Stok: <?php echo $data["stok"] ?></b></span><br><br>
               <span class="name"><b>Harga: Rp.<?php echo $data["harga"] ?></b></span><br>
               <button class="button"><span>Add To Cart</span></button>
