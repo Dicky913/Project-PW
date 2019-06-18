@@ -7,11 +7,11 @@ if (!isset($_SESSION["login"])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<title>Checkout Page</title>
 
 <head>
     <meta charset="utf-8">
-    <title>Index</title>
+    <title>Checkout</title>
     <link rel="stylesheet" href="../../CSS/main.css">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -74,7 +74,6 @@ if (!isset($_SESSION["login"])) {
                     <th>Jumlah</th>
                     <th>Harga</th>
                     <th>Sub Harga</th>
-                    <th>Aksi</th>
                 </tr>
 
                 <?php $i = 1 ?>
@@ -93,17 +92,11 @@ if (!isset($_SESSION["login"])) {
                             <td><?php echo $jumlah ?></td>
                             <td>Rp. <?php echo number_format($data['harga']) ?></td>
                             <td>Rp. <?php echo number_format($subharga)  ?></td>
-                            <td><a href="hapuscart.php?id=<?php echo $id_barang ?>">Hapus</a></td>
                         </tr>
                         <?php $i += 1; ?>
                     <?php } ?>
                 <?php endforeach ?>
             </table>
-            <center>
-                <input type="button" name="" value="Kembali Belanja" onclick="window.location.href='shop.php'">
-                <input type="button" name="checkout" value="Checkout" onclick="window.location.href='checkout.php'">
-            </center>
-
         </form>
 
     </div>
