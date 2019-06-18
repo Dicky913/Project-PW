@@ -1,5 +1,17 @@
-<!DOCTYPE>
-
+<?php
+session_start();
+include '../../../CONTROLLER/action_petani.php';
+//kasi kondisi jika tombol submit sudah ditekan
+if (isset($_POST["submit"])) {
+  if (addproduct($_POST) > 0) {
+    echo "<script>
+                alert('Anda telah Berhasil Upload Barang');
+              </script>";
+  }
+} else {
+  echo mysqli_error($conn);
+}
+?>
 <html>
 
 <head>
@@ -55,7 +67,7 @@
   <br><br><br><br><br>
 
   <div class="tubuh">
-    <form action="addproduct.php" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data">
 
       <table align="center" width="795" border="2" bgcolor="#187eae">
 
@@ -67,33 +79,33 @@
 
         <tr>
           <td align="right"><b>Product Title:</b></td>
-          <td><input type="text" name="product_title" size="60" required /></td>
+          <td><input type="text" name="Nm_barang" size="60" required /></td>
         </tr>
 
 
 
         <tr>
           <td align="right"><b>Product Image:</b></td>
-          <td><input type="file" name="product_image" /></td>
+          <td><input type="file" name="gambar" /></td>
         </tr>
 
         <tr>
           <td align="right"><b>Product Stock:</b></td>
-          <td><input type="text" name="product_stok" required /></td>
+          <td><input type="text" name="stok" required /></td>
         </tr>
 
         <tr>
           <td align="right"><b>Product Price:</b></td>
-          <td><input type="text" name="product_price" required /></td>
+          <td><input type="text" name="harga" required /></td>
         </tr>
 
         <tr>
           <td align="right"><b>Product Description:</b></td>
-          <td><textarea name="product_desc" cols="20" rows="10"></textarea></td>
+          <td><textarea name="deskripsi" cols="20" rows="10"></textarea></td>
         </tr>
 
         <tr align="center">
-          <td colspan="7"><input type="submit" name="insert_post" value="Insert Product Now" /></td>
+          <td colspan="7"><input type="submit" name="submit" value="Insert Product Now" /></td>
         </tr>
 
       </table>

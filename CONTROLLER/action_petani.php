@@ -200,3 +200,17 @@ function ubahpassword($data)
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
+
+function addproduct($data)
+{
+    global $conn;
+    $id_petani = $_SESSION['id'];
+    $stok = $data['stok'];
+    $harga = $data['harga'];
+    $namabarang = $data['Nm_barang'];
+    $desc = $data['deskripsi'];
+    $gambar = upload();
+
+    mysqli_query($conn, "INSERT INTO barang VALUES ('', '$id_petani', '$stok', '$harga', '$namabarang', '$desc', '$gambar', '1')");
+    return mysqli_affected_rows($conn);
+}
