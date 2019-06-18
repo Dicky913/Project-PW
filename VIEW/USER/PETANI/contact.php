@@ -46,7 +46,6 @@
       <a href="indexpetani.php">Home</a>
       <a href="addproduct.php">Add Product</a>
       <a href="shop.php">Shop</a>
-      <a href="cart.php">Cart</a>
       <a href="contact.php">Contact</a>
     </div>
   </div>

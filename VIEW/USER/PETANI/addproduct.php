@@ -95,6 +95,11 @@ if (isset($_POST["submit"])) {
         </tr>
 
         <tr>
+          <td align="right"><b>Stock Unit:</b></td>
+          <td><input type="text" name="unit" required /></td>
+        </tr>
+
+        <tr>
           <td align="right"><b>Product Price:</b></td>
           <td><input type="text" name="harga" required /></td>
         </tr>

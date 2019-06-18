@@ -126,8 +126,8 @@ include '../../../CONTROLLER/action_petani.php';
 
     <div class="menu">
       <a href="indexpetani.php">Home</a>
+      <a href="addproduct.php">Add Product</a>
       <a href="shop.php">Shop</a>
-      <a href="cart.php">Cart</a>
       <a href="contact.php">Contact</a>
     </div>
   </div>
@@ -148,9 +148,8 @@ include '../../../CONTROLLER/action_petani.php';
               <img src="../../IMAGE/images_petani/<?php echo $data["gambar"] ?>" alt="alpha"><br>
               <h3><?php echo $data["Nm_barang"] ?></h3>
               <span class="name">Penjelasan: <?php echo $data["deskripsi"] ?></span><br><br>
-              <span class="name"><b>Stok: <?php echo $data["stok"] ?></b></span><br><br>
+              <span class="name"><b>Stok: <?php echo $data["stok"] ?> <?php echo $data["unit"] ?></b></span><br><br>
               <span class="name"><b>Harga: Rp.<?php echo $data["harga"] ?></b></span><br>
-              <button class="button"><span>Add To Cart</span></button>
             </article>
           </section>
         </center>

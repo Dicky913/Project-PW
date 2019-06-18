@@ -206,11 +206,12 @@ function addproduct($data)
     global $conn;
     $id_petani = $_SESSION['id'];
     $stok = $data['stok'];
+    $unit = $data['unit'];
     $harga = $data['harga'];
     $namabarang = $data['Nm_barang'];
     $desc = $data['deskripsi'];
     $gambar = upload();
 
-    mysqli_query($conn, "INSERT INTO barang VALUES ('', '$id_petani', '$stok', '$harga', '$namabarang', '$desc', '$gambar', '1')");
+    mysqli_query($conn, "INSERT INTO barang VALUES ('', '$id_petani', '$stok', '$unit', '$harga', '$namabarang', '$desc', '$gambar', '1')");
     return mysqli_affected_rows($conn);
 }
