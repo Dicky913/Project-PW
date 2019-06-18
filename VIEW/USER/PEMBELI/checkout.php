@@ -66,7 +66,7 @@ if (!isset($_SESSION["login"])) {
     </div>
     <div class="tubuh">
         <h2>CHECKOUT</h2>
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="" method="post">
             <table align="center" width="700" bgcolor="skyblue">
 
                 <tr align="center">
@@ -107,9 +107,18 @@ if (!isset($_SESSION["login"])) {
                 </tr>
             </table>
             <center>
-                <input type="button" name="checkout" value="Beli" onclick="window.location.href=''">
+                <input type="button" name="beli" value="Beli" onclick="window.location.href=''">
             </center>
         </form>
+        <?php
+        if (isset($_POST['beli'])) {
+            $id_pembeli = $_SESSION['id'];
+            $tanggal = date("Y-m-d");
+            $fulltotal = $total;
+
+            mysqli_query($conn, "INSERT INTO transaksi VALUES ('', '', '$tanggal', '$fulltotal')");
+        }
+        ?>
 
     </div>
     <div class="footer" align="center">
