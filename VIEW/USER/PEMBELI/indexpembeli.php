@@ -24,7 +24,7 @@ $data = thisquery("SELECT * FROM pembeli WHERE id_pembeli = $id")[0];
   <style>
     .tubuh {
       width: 100%;
-      height: 400px;
+      height: 800px;
     }
   </style>
 </head>
