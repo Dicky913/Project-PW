@@ -8,8 +8,6 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
-
-
 ?>
 
 <!DOCTYPE html>

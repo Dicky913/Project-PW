@@ -1,3 +1,12 @@
+<?php
+include '../../../CONTROLLER/action_admin.php';
+session_start();
+
+if (!isset($_SESSION["login"])) {
+  header("Location: login_admin.php");
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -60,8 +69,9 @@
       <th>Order Date</th>
       <th>Action</th>
     </tr>
+    <?php $i = 1 ?>
     <tr align="center">
-      <td>1</td>
+      <td><?php echo $i ?></td>
       <td>opalbedel@gmail.com</td>
       <td>5<</td> <td>5ftydsyrd36</td>
       <td>03-06-99</td>

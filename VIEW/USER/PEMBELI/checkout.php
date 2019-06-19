@@ -119,9 +119,10 @@ $koneksi = new mysqli("localhost", "root", "", "petanidb");
             $koneksi->query("INSERT INTO pembelian (id_pembeli, tanggal, total_pembelian) VALUES ('$id_pembeli', '$tanggal_pembelian', '$total')");
 
             //mendapat id_pembelian barusan terjadi
+            $rand = uniqid();
             $id_pembelian_barusan = $koneksi->insert_id; //dapetin id pembelian pas di klik
             foreach ($_SESSION["keranjang"] as $id_barang => $jumlah) {
-                $koneksi->query("INSERT INTO pembelian_produk (id_pembelian, kd_barang, jumlah) VALUES ('$id_pembelian_barusan', '$id_barang', '$jumlah')");
+                $koneksi->query("INSERT INTO pembelian_produk (id_pembelian, kd_barang, jumlah, no_transaksi, konfirmasi) VALUES ('$id_pembelian_barusan', '$id_barang', '$jumlah', '$rand', 'Belum')");
             }
             //mengkosongkan keranjang belanja setelah dibeli
             unset($_SESSION['keranjang']);
