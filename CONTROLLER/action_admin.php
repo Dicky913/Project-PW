@@ -41,3 +41,12 @@ function hapuspembeli($id)
 
     return mysqli_affected_rows($conn);
 }
+
+function konfirmasi($id)
+{
+    global $conn;
+
+    mysqli_query($conn, "UPDATE pembelian_produk SET konfirmasi ='Sudah ' WHERE id_pembelian_produk = $id");
+
+    return mysqli_affected_rows($conn);
+}

@@ -69,7 +69,7 @@ if (!isset($_SESSION["login"])) {
     </tr>
 
     <?php
-    $query = ("SELECT no_transaksi, konfirmasi, Nm_barang FROM pembelian_produk INNER JOIN barang ON pembelian_produk.kd_barang_2 = barang.kd_barang WHERE pembelian_produk.konfirmasi = 'belum'");
+    $query = ("SELECT id_pembelian_produk, no_transaksi, konfirmasi, Nm_barang FROM pembelian_produk INNER JOIN barang ON pembelian_produk.kd_barang_2 = barang.kd_barang WHERE pembelian_produk.konfirmasi = 'belum'");
     $sql = mysqli_query($conn, $query);
     $i = 1; ?>
     <?php while ($data = mysqli_fetch_array($sql)) { ?>
@@ -78,10 +78,10 @@ if (!isset($_SESSION["login"])) {
         <td><?php echo $i ?></td>
         <td><?php echo $data['Nm_barang'] ?></td>
         <td><?php echo $data['no_transaksi'] ?></td>
-        <td><a href="">Konfirmasi Pembayaran</a></td>
-      </tr>
-      </section>
-      <?php $i += 1; ?>
+        <td><a href="../../../CONTROLLER/admin_konfirmasi.php?id=<?php echo $data['id_pembelian_produk'] ?>" onclick="return confirm('Apakah Yakin Akan Konfirmasi Data ini?')"">Konfirmasi Pembayaran</a></td>
+                    </tr>
+                    </section>
+                    <?php $i += 1; ?>
     <?php } ?>
   </table>
   </div>
