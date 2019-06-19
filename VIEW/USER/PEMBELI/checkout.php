@@ -126,7 +126,7 @@ $koneksi = new mysqli("localhost", "root", "", "petanidb");
             //mengkosongkan keranjang belanja setelah dibeli
             unset($_SESSION['keranjang']);
             //direct ke my_orders
-            echo "<script>alert</script>";
+            echo "<script>alert('Pembelian Sukses!');</script>";
         }
         ?>
     </div>

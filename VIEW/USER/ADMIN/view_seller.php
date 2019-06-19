@@ -78,7 +78,7 @@ $data = thisquery("SELECT * FROM petani");
       <td><?php echo $i ?></td>
       <td><?php echo $dt["nama"] ?></td>
       <td><?php echo $dt["email"] ?></td>
-      <td>Belum ada</td>
+      <td><img src="../../IMAGE/images_petani/<?php echo $dt["gambar"] ?>" class="tes" width="50"></td>
       <td><?php echo $dt["alamat"] ?></td>
       <td><?php echo $dt["no_hp"] ?></td>
       <td>
