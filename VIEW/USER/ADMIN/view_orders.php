@@ -63,21 +63,26 @@ if (!isset($_SESSION["login"])) {
 
     <tr align="center" bgcolor="skyblue">
       <th>No</th>
-      <th>Product (S)</th>
-      <th>Quantity</th>
+      <th>Nama Produk</th>
       <th>Invoice No</th>
-      <th>Order Date</th>
-      <th>Action</th>
+      <th>Update Status</th>
     </tr>
-    <?php $i = 1 ?>
-    <tr align="center">
-      <td><?php echo $i ?></td>
-      <td>opalbedel@gmail.com</td>
-      <td>5<</td> <td>5ftydsyrd36</td>
-      <td>03-06-99</td>
-      <td><a href="#">Konfirmasi Pembayaran</a></td>
 
-    </tr>
+    <?php
+    $query = ("SELECT no_transaksi, konfirmasi, Nm_barang FROM pembelian_produk INNER JOIN barang ON pembelian_produk.kd_barang_2 = barang.kd_barang WHERE pembelian_produk.konfirmasi = 'belum'");
+    $sql = mysqli_query($conn, $query);
+    $i = 1; ?>
+    <?php while ($data = mysqli_fetch_array($sql)) { ?>
+
+      <tr align=" center ">
+        <td><?php echo $i ?></td>
+        <td><?php echo $data['Nm_barang'] ?></td>
+        <td><?php echo $data['no_transaksi'] ?></td>
+        <td><a href="">Konfirmasi Pembayaran</a></td>
+      </tr>
+      </section>
+      <?php $i += 1; ?>
+    <?php } ?>
   </table>
   </div>
 </body>

@@ -73,20 +73,16 @@ if (!isset($_SESSION["login"])) {
       </tr>
 
       <?php $id_pembeli = $_SESSION['id'];
-
       $query = ("SELECT no_transaksi, konfirmasi, Nm_barang FROM pembelian_produk INNER JOIN barang ON pembelian_produk.kd_barang_2 = barang.kd_barang WHERE pembelian_produk.id_pembeli_2 = $id_pembeli");
-
       $sql = mysqli_query($conn, $query);
-
       $i = 1; ?>
-
       <?php while ($data = mysqli_fetch_array($sql)) { ?>
 
         <tr align=" center ">
           <td><?php echo $i ?></td>
           <td><?php echo $data['Nm_barang'] ?></td>
           <td><?php echo $data['no_transaksi'] ?></td>
-          <td><?php echo $data['konfirmasi'] ?></td>
+          <td><?php echo $data['konfirmasi'] ?> Lunas</td>
         </tr>
         </section>
         <?php $i += 1; ?>
