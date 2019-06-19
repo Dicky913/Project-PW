@@ -200,3 +200,12 @@ function ubahpassword($data)
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
+
+function hapuspembeli($id)
+{
+    global $conn;
+
+    mysqli_query($conn, "DELETE FROM pembeli WHERE id_petani = $id");
+
+    return mysqli_affected_rows($conn);
+}

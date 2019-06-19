@@ -215,3 +215,12 @@ function addproduct($data)
     mysqli_query($conn, "INSERT INTO barang VALUES ('', '$id_petani', '$stok', '$unit', '$harga', '$namabarang', '$desc', '$gambar', '1')");
     return mysqli_affected_rows($conn);
 }
+
+function hapuspetani($id)
+{
+    global $conn;
+
+    mysqli_query($conn, "DELETE FROM petani WHERE id_petani = $id");
+
+    return mysqli_affected_rows($conn);
+}

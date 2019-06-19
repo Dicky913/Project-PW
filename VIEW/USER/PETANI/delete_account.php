@@ -1,3 +1,14 @@
+<?php
+include '../../../CONTROLLER/action_petani.php';
+session_start();
+
+//jika belum login, maka session["login] belum terbentuk dan tidak boleh masuk ke index
+if (!isset($_SESSION["login"])) {
+  header("Location: login_petani.php");
+  exit;
+}
+$id = $_SESSION['id'];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -55,14 +66,13 @@
       <form action="" method="post">
 
         <br>
-        <input type="submit" name="yes" value="Yes I want" />
-        <input type="submit" name="no" value="No " />
+        <a href="../../../CONTROLLER/admin_hapuspetani.php?id=<?php echo $id ?>" onclick="return confirm('Apakah Yakin Akan Menghapus Data ini?')">HAPUS</a>
 
       </form>
     </center>
 
   </div>
-  <div class="footer" align="center">
+  <div class=" footer" align="center">
     <table width=100%>
       <tr>
 
