@@ -123,6 +123,8 @@ $koneksi = new mysqli("localhost", "root", "", "petanidb");
             foreach ($_SESSION["keranjang"] as $id_barang => $jumlah) {
                 $koneksi->query("INSERT INTO pembelian_produk (id_pembelian, kd_barang, jumlah) VALUES ('$id_pembelian_barusan', '$id_barang', '$jumlah')");
             }
+            //mengkosongkan keranjang belanja setelah dibeli
+            unset($_SESSION['keranjang']);
             //direct ke my_orders
             echo "<script>alert</script>";
         }
