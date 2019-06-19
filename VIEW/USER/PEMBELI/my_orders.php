@@ -68,46 +68,52 @@ if (!isset($_SESSION["login"])) {
       <tr align="center" bgcolor="skyblue">
         <th>No</th>
         <th>Nama Produk</th>
-        <th>Tanggal</th>
         <th>Invoice No</th>
-        <th>Order Date</th>
         <th>Status</th>
       </tr>
 
-      <?php $id_pembeli = $_SESSION['id']; ?>
-      <?php
-      $data = thisquery("SELECT * FROM pembelian JOIN pembeli
-      ON pembelian.id_pembeli = pembeli.id_pembeli
-      WHERE id_pembeli = $id_pembeli");
-      ?>
-      <?php $i = 1; ?>
-      <tr align="center">
-        <td><?php $i = 1; ?></td>
-        <td>Jagung MUda</td>
-        <td>3</td>
-        <td>3213edf</td>
-        <td>12 juni</td>
-        <td>menunggu konfirmasi</td>
-      </tr>
+      <?php $id_pembeli = $_SESSION['id'];
+
+      $query = ("SELECT no_transaksi, konfirmasi, Nm_barang FROM pembelian_produk INNER JOIN barang ON pembelian_produk.kd_barang_2 = barang.kd_barang WHERE pembelian_produk.id_pembeli_2 = $id_pembeli");
+
+      $sql = mysqli_query($conn, $query);
+
+      $i = 1; ?>
+
+      <?php while ($data = mysqli_fetch_array($sql)) { ?>
+
+        <tr align=" center ">
+          <td><?php echo $i ?></td>
+          <td><?php echo $data['Nm_barang'] ?></td>
+          <td><?php echo $data['no_transaksi'] ?></td>
+          <td><?php echo $data['konfirmasi'] ?></td>
+        </tr>
+        </section>
+        <?php $i += 1; ?>
+      <?php } ?>
     </table>
 
   </div>
-  <div class="footer" align="center">
+  <div class=" footer " align=" center ">
     <table width=100%>
       <tr>
 
-        <td align="center">
-          <p id="lol" font></p>
+        <td align=" center ">
+          <p id=" lol " font></p>
           <script>
             function Person(first) {
               this.firstName = first;
             }
-            var orang1 = new Person("KAK EKA");
-            var orang2 = new Person("DICKY");
-            var orang3 = new Person("OPHAL");
+            var orang1 = new Pers on(" KAK EK A");
+            var orang2 = new Person("DICK Y");
+            var orang3 = new Person("OPHA L");
 
-            document.getElementById("lol").innerHTML =
-              "Copyright &copy; 2014 " + orang1.firstName + " " + orang2.firstName + " And " + orang3.firstName;
+            document.g etE lementById("lo l").innerHTML =
+
+              "Copyright  &copy;
+            2014 " + orang1.firstName + "
+            " + orang2.firstName + "
+            and " + orang3.firstName;
           </script>
         </td>
 
