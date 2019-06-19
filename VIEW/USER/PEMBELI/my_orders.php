@@ -1,3 +1,11 @@
+<?php
+include '../../../CONTROLLER/action_pembeli.php';
+session_start();
+if (!isset($_SESSION["login"])) {
+  header("Location: login_pembeli.php");
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -60,14 +68,21 @@
       <tr align="center" bgcolor="skyblue">
         <th>No</th>
         <th>Nama Produk</th>
-        <th>Jumlah</th>
+        <th>Tanggal</th>
         <th>Invoice No</th>
         <th>Order Date</th>
         <th>Status</th>
       </tr>
 
+      <?php $id_pembeli = $_SESSION['id']; ?>
+      <?php
+      $data = thisquery("SELECT * FROM pembelian JOIN pembeli
+      ON pembelian.id_pembeli = pembeli.id_pembeli
+      WHERE id_pembeli = $id_pembeli");
+      ?>
+      <?php $i = 1; ?>
       <tr align="center">
-        <td>1</td>
+        <td><?php $i = 1; ?></td>
         <td>Jagung MUda</td>
         <td>3</td>
         <td>3213edf</td>

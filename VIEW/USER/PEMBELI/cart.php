@@ -1,5 +1,5 @@
 <?php
-include '../../../CONTROLLER/action_petani.php';
+include '../../../CONTROLLER/action_pembeli.php';
 session_start();
 if (!isset($_SESSION["login"])) {
     header("Location: login_pembeli.php");
