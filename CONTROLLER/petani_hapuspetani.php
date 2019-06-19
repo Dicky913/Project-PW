@@ -7,7 +7,7 @@ if (hapuspetani($id) > 0) {
     echo "
             <script>
                 alert('Data Berhasil Dihapus!');
-                document.location.href = '../VIEW/USER/PETANI/indexpetani.php';
+                document.location.href = '../VIEW/USER/PETANI/login_petani.php';
             </script>
         ";
 } else {

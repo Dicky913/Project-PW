@@ -66,7 +66,7 @@ $id = $_SESSION['id'];
       <form action="" method="post">
 
         <br>
-        <a href="../../../CONTROLLER/admin_hapuspetani.php?id=<?php echo $id ?>" onclick="return confirm('Apakah Yakin Akan Menghapus Data ini?')">HAPUS</a>
+        <a href="../../../CONTROLLER/petani_hapuspetani.php?id=<?php echo $id ?>" onclick="return confirm('Apakah Yakin Akan Menghapus Data ini?')">HAPUS</a>
 
       </form>
     </center>

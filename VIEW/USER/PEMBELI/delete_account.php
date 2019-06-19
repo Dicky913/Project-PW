@@ -6,6 +6,7 @@ if (!isset($_SESSION["login"])) {
   header("Location: login_pembeli.php");
   exit;
 }
+$id = $_SESSION['id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,8 +66,7 @@ if (!isset($_SESSION["login"])) {
       <form action="" method="post">
 
         <br>
-        <input type="submit" name="yes" value="Yes I want" />
-        <input type="submit" name="no" value="No " />
+        <a href="../../../CONTROLLER/pembeli_hapuspembeli.php?id=<?php echo $id ?>" onclick="return confirm('Apakah Yakin Akan Menghapus Data ini?')">HAPUS</a>
 
       </form>
     </center>

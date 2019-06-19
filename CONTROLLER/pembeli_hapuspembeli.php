@@ -7,7 +7,7 @@ if (hapuspembeli($id) > 0) {
     echo "
             <script>
                 alert('Data Berhasil Dihapus!');
-                document.location.href = '../VIEW/USER/PEMBELI/indexpembeli.php';
+                document.location.href = '../VIEW/USER/PEMBELI/login_pembeli.php';
             </script>
         ";
 } else {
