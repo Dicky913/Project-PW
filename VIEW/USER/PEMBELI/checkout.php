@@ -5,7 +5,7 @@ if (!isset($_SESSION["login"])) {
     header("Location: login_pembeli.php");
     exit;
 }
-
+$koneksi = new mysqli("localhost", "root", "", "petanidb");
 ?>
 <!DOCTYPE html>
 <title>Checkout Page</title>
@@ -113,13 +113,18 @@ if (!isset($_SESSION["login"])) {
         <?php
         if (isset($_POST['beli'])) {
             $id_pembeli = $_SESSION['id'];
-            $tanggal = date("Y-m-d");
-            $fulltotal = $total;
+            $tanggal_pembelian = date("Y-d-m");
+            foreach ($_SESSION['keranjang'] as $id_barang => $jumlah) {
+                $koneksi->query("INSERT INTO pembelian VALUES ('', '$id_pembeli', '', '', '$tanggal_pembelian', '$total')");
+            }
+            $catch = $koneksi->query('SELECT * FROM barang where kd_barang = 2 ');
+            $arraybarang = $catch->fetch_assoc();
+            $id_petani = $arraybarang['id_petani'];
 
-            mysqli_query($conn, "INSERT INTO transaksi VALUES ('', '', '$tanggal', '$fulltotal')");
+            //menyimpan data ke tabel beli
+
         }
         ?>
-
     </div>
     <div class="footer" align="center">
         <table width=100%>
