@@ -1,5 +1,5 @@
 <?php
-include '../../../CONTROLLER/action_petani.php';
+include '../../../CONTROLLER/action_pembeli.php';
 session_start();
 if (!isset($_SESSION["login"])) {
     header("Location: login_pembeli.php");
@@ -107,46 +107,48 @@ $koneksi = new mysqli("localhost", "root", "", "petanidb");
                 </tr>
             </table>
             <center>
-                <input type="button" name="beli" value="Beli" onclick="window.location.href=''">
+                <input type="submit" name="beli" value="Beli"">
             </center>
         </form>
         <?php
         if (isset($_POST['beli'])) {
             $id_pembeli = $_SESSION['id'];
-            $tanggal_pembelian = date("Y-d-m");
-            foreach ($_SESSION['keranjang'] as $id_barang => $jumlah) {
-                $koneksi->query("INSERT INTO pembelian VALUES ('', '$id_pembeli', '', '', '$tanggal_pembelian', '$total')");
+            $tanggal_pembelian = date("Y-m-d");
+
+            //1.menyimpan data ke tabel pembelian
+            $koneksi->query("INSERT INTO pembelian (id_pembeli, tanggal, total_pembelian) VALUES ('$id_pembeli', '$tanggal_pembelian', '$total')");
+
+            //mendapat id_pembelian barusan terjadi
+            $id_pembelian_barusan = $koneksi->insert_id; //dapetin id pembelian pas di klik
+            foreach ($_SESSION["keranjang"] as $id_barang => $jumlah) {
+                $koneksi->query("INSERT INTO pembelian_produk (id_pembelian, kd_barang, jumlah) VALUES ('$id_pembelian_barusan', '$id_barang', '$jumlah')");
             }
-            $catch = $koneksi->query('SELECT * FROM barang where kd_barang = 2 ');
-            $arraybarang = $catch->fetch_assoc();
-            $id_petani = $arraybarang['id_petani'];
-
-            //menyimpan data ke tabel beli
-
+            //direct ke my_orders
+            echo "<script>alert</script>";
         }
         ?>
     </div>
-    <div class="footer" align="center">
-        <table width=100%>
-            <tr>
+    <div class=" footer" align="center">
+                <table width=100%>
+                    <tr>
 
-                <td align="center">
-                    <p id="lol" font></p>
-                    <script>
-                        function Person(first) {
-                            this.firstName = first;
-                        }
-                        var orang1 = new Person("KAK EKA");
-                        var orang2 = new Person("DICKY");
-                        var orang3 = new Person("OPHAL");
+                        <td align="center">
+                            <p id="lol" font></p>
+                            <script>
+                                function Person(first) {
+                                    this.firstName = first;
+                                }
+                                var orang1 = new Person("KAK EKA");
+                                var orang2 = new Person("DICKY");
+                                var orang3 = new Person("OPHAL");
 
-                        document.getElementById("lol").innerHTML =
-                            "Copyright &copy; 2014 " + orang1.firstName + " " + orang2.firstName + " And " + orang3.firstName;
-                    </script>
-                </td>
+                                document.getElementById("lol").innerHTML =
+                                    "Copyright &copy; 2014 " + orang1.firstName + " " + orang2.firstName + " And " + orang3.firstName;
+                            </script>
+                        </td>
 
-            </tr>
-        </table>
+                    </tr>
+                </table>
 
     </div>
 </body>
