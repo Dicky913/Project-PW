@@ -40,7 +40,7 @@ $id = $_SESSION['id'];
     <div class="menu">
       <a href="indexpetani.php">Home</a>
       <i class="fas fa-home"></i>
-      <a href="logout.php">Logout</a>
+      <a href="../../../CONTROLLER/logout.php">Logout</a>
       <i class="fas fa-sign-in-alt"></i>
     </div>
   </div>

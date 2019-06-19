@@ -49,7 +49,7 @@ if (isset($_POST["submit"])) {
 
       <a href="my_account.php">My Account</a>
       <i class="fas fa-user"></i>
-      <a href="logout.php">Logout</a>
+      <a href="../../../CONTROLLER/logout.php">Logout</a>
       <i class="fas fa-sign-in-alt"></i>
     </div>
   </div>
