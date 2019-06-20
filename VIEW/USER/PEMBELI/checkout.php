@@ -124,6 +124,17 @@ $koneksi = new mysqli("localhost", "root", "", "petanidb");
             foreach ($_SESSION["keranjang"] as $id_barang => $jumlah) {
                 $koneksi->query("INSERT INTO pembelian_produk (id_pembelian_2, id_pembeli_2, kd_barang_2, jumlah, no_transaksi, konfirmasi) VALUES ('$id_pembelian_barusan', '$id_pembeli', '$id_barang', '$jumlah', '$rand', 'Belum')");
             }
+
+            //menngurangi isi barang
+            foreach ($_SESSION["keranjang"] as $id_barang => $jumlah) {
+                $select_query = "SELECT * FROM barang WHERE kd_barang = $id_barang";
+                $sql = mysqli_query($conn, $select_query);
+                $data = mysqli_fetch_array($sql);
+                $stok = $data['stok'];
+                $new_stok = $stok - $jumlah;
+
+                $koneksi->query("UPDATE barang SET stok ='$new_stok' WHERE kd_barang = $id_barang");
+            }
             //mengkosongkan keranjang belanja setelah dibeli
             unset($_SESSION['keranjang']);
             //direct ke my_orders
