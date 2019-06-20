@@ -21,6 +21,78 @@ if (!isset($_SESSION["login"])) {
             width: 100%;
             height: 400px;
         }
+
+        .agenda,
+        .artikel {
+            margin-bottom: 40px;
+            width: 100%;
+            margin-left: 500px;
+        }
+
+        .tes {
+            float: left;
+            border: 2px solid #f1f1f1;
+            border-radius: 5%;
+            padding: 10px;
+            text-align: center;
+            width: 270px;
+            background-color: aqua;
+            height: 250px;
+            margin-right: 30px;
+            margin-bottom: 45px;
+            margin-left: 10px;
+        }
+
+        .tes img {
+            width: 50%;
+        }
+
+        .tes p {
+            height: 40px;
+            /* padding: 10px; */
+            text-align: left;
+            margin: 0;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            border-radius: 4px;
+            background-color: #28b75f;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 20px;
+            padding: 5px;
+            width: 170px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -10px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 15px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
     </style>
 </head>
 
@@ -101,8 +173,8 @@ if (!isset($_SESSION["login"])) {
                 <?php endforeach ?>
             </table>
             <center>
-                <input type="button" name="" value="Kembali Belanja" onclick="window.location.href='shop.php'">
-                <input type="button" name="checkout" value="Checkout" onclick="window.location.href='checkout.php'">
+                <input type="button" class="button" name="" value="Kembali Belanja" onclick="window.location.href='shop.php'">
+                <input type="button" class="button" name="checkout" value="Checkout" onclick="window.location.href='checkout.php'">
             </center>
 
         </form>

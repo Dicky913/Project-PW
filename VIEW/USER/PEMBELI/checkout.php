@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include '../../../CONTROLLER/action_pembeli.php';
 session_start();
 if (!isset($_SESSION["login"])) {
@@ -20,6 +21,45 @@ $koneksi = new mysqli("localhost", "root", "", "petanidb");
         .tubuh {
             width: 100%;
             height: 400px;
+        }
+
+        .button {
+            border-radius: 4px;
+            background-color: #28b75f;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 20px;
+            padding: 5px;
+            width: 80px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -10px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 15px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
         }
     </style>
 </head>
@@ -107,7 +147,7 @@ $koneksi = new mysqli("localhost", "root", "", "petanidb");
                 </tr>
             </table>
             <center>
-                <input type="submit" name="beli" value="Beli"">
+                <input type="submit" name="beli" value="Beli" class="button"">
             </center>
         </form>
         <?php
