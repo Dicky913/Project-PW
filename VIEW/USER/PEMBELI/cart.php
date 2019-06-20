@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include '../../../CONTROLLER/action_pembeli.php';
 session_start();
 if (!isset($_SESSION["login"])) {
