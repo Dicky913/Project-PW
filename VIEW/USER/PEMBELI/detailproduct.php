@@ -37,7 +37,7 @@ if (!isset($_SESSION["login"])) {
       text-align: center;
       width: 300px;
       background-color: aqua;
-      height: 370px;
+      height: 450px;
       margin-right: 1px;
       margin-bottom: 3px;
     }
@@ -153,7 +153,16 @@ if (!isset($_SESSION["login"])) {
               <h3><?php echo $data["Nm_barang"] ?></h3>
               <span class="name">Penjelasan: <?php echo $data["deskripsi"] ?></span><br><br>
               <span class="name"><b>Stok: <?php echo $data["stok"] ?> <?php echo $data["unit"] ?></b></span><br><br>
-              <span class="name"><b>Harga: Rp.<?php echo $data["harga"] ?></b></span><br>
+              <span class="name"><b>Harga: Rp.<?php echo number_format($data["harga"])  ?> / <?php echo $data["unit"] ?></b></span><br>
+              <?php
+              $id_petani = $data["id_petani"];
+              $query = "SELECT * FROM petani WHERE id_petani = $id_petani";
+              $sql = mysqli_query($conn, $query) or die(mysql_error());
+              $data2 = mysqli_fetch_array($sql);
+              ?>
+              <h4>Oleh: <?php echo $data2["nama"] ?></h4>
+              <h4>No Hp: <?php echo $data2["no_hp"] ?></h4>
+              <h4>No Hp: <?php echo $data2["email"] ?></h4>
               <a href="../../../CONTROLLER/beli.php?kd_barang=<?php echo $data['kd_barang']; ?>"><button class="button"><span>Add To Cart</span></button></a>
             </article>
           </section>
