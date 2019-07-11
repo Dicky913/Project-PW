@@ -155,7 +155,7 @@ if (!isset($_SESSION["login"])) {
               <span class="name"><b>Stok: <?php echo $data["stok"] ?> <?php echo $data["unit"] ?></b></span><br><br>
               <span class="name"><b>Harga: Rp.<?php echo $data["harga"] ?></b></span><br>
               <?php
-              $id_petani = $data["id_petani"];
+              $id_petani = $data["id_petani_br"];
               $query = "SELECT * FROM petani WHERE id_petani = $id_petani";
               $sql = mysqli_query($conn, $query) or die(mysql_error());
               $data2 = mysqli_fetch_array($sql);

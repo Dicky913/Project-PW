@@ -152,7 +152,7 @@ if (isset($_POST["submit"])) {
 
         <?php
         $id_petani = $_SESSION['id'];
-        $select_query = "SELECT * FROM barang WHERE id_petani = $id_petani";
+        $select_query = "SELECT * FROM barang WHERE id_petani_br = $id_petani";
         $sql = mysqli_query($conn, $select_query) or die(mysql_error());
         while ($data = mysqli_fetch_array($sql)) { ?>
             <section>

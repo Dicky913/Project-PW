@@ -20,45 +20,6 @@ if (!isset($_SESSION["login"])) {
       width: 100%;
       height: 400px;
     }
-
-    .button {
-      border-radius: 4px;
-      background-color: #28b75f;
-      border: none;
-      color: #FFFFFF;
-      text-align: center;
-      font-size: 20px;
-      padding: 5px;
-      width: 80px;
-      transition: all 0.5s;
-      cursor: pointer;
-      margin: 5px;
-    }
-
-    .button span {
-      cursor: pointer;
-      display: inline-block;
-      position: relative;
-      transition: 0.5s;
-    }
-
-    .button span:after {
-      content: '\00bb';
-      position: absolute;
-      opacity: 0;
-      top: 0;
-      right: -10px;
-      transition: 0.5s;
-    }
-
-    .button:hover span {
-      padding-right: 15px;
-    }
-
-    .button:hover span:after {
-      opacity: 1;
-      right: 0;
-    }
   </style>
 </head>
 
@@ -106,20 +67,24 @@ if (!isset($_SESSION["login"])) {
 
       <tr align="center" bgcolor="skyblue">
         <th>No</th>
-        <th>Invoice No</th>
-        <th>Detail</th>
+        <th>Nama Produk</th>
+        <th>Jumlah</th>
+        <th>Status</th>
       </tr>
 
       <?php $id_pembeli = $_SESSION['id'];
-      $query = ("SELECT DISTINCT no_transaksi, konfirmasi FROM pembelian_produk WHERE id_pembeli_2 = $id_pembeli");
+      $invoice = $_GET['invoice'];
+
+      $query = ("SELECT jumlah, konfirmasi, Nm_barang FROM pembelian_produk INNER JOIN barang ON pembelian_produk.kd_barang_2 = barang.kd_barang WHERE pembelian_produk.id_pembeli_2 = $id_pembeli AND pembelian_produk.no_transaksi ='$invoice'");
       $sql = mysqli_query($conn, $query);
       $i = 1; ?>
       <?php while ($data = mysqli_fetch_array($sql)) { ?>
 
         <tr align=" center ">
           <td><?php echo $i ?></td>
-          <td><?php echo $data['no_transaksi'] ?></td>
-          <td><button class="button" onclick="window.location.href='my_orders_detail.php?invoice=<?php echo $data['no_transaksi'] ?>'">Detail</button></td>
+          <td><?php echo $data['Nm_barang'] ?></td>
+          <td><?php echo $data['jumlah'] ?></td>
+          <td><?php echo $data['konfirmasi'] ?> Lunas</td>
         </tr>
         </section>
         <?php $i += 1; ?>
