@@ -56,6 +56,7 @@ $data = thisquery("SELECT * FROM petani WHERE id_petani = $id")[0];
 
     <div class="menu">
       <a href="profile.php">Profil</a>
+      <a href="my_store.php">My Store</a>
       <a href="edit_account.php">Edit Account</a>
       <a href="change_pass.php">Change Password</a>
       <a href="delete_account.php">Delete Account</a>
